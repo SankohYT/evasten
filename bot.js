@@ -15,7 +15,19 @@ client.on("message", message => {
 })
  message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
  message.delete(); 
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'offline').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
 };     
+});
+client.on('message', msg => {
+  if (msg.content === 'هلا') {
+    msg.reply('هلا بيك والله');
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'سلام عليكم') {
+    msg.reply('وعليكم السلام ورحمة الله تعالى وبركاته');
+  }
 });
 
 
